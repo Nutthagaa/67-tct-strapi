@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  app:
+    image: nutthaga/app:latest
+    container_name: myapp
+    ports:
+      - ${PORT}
+    environment:
+       DATABASE_CLIENT: ${DATABASE_CLIENT}
+       DATABASE_HOST: ${DATABASE_HOST}
+       DATABASE_PORT: ${DATABASE_PORT}
+       DATABASE_NAME: ${DATABASE_NAME}
+       DATABASE_USERNAME: ${DATABASE_USERNAME}
+       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+       DATABASE_SSL: false
+  db:
+    image: postgres:latest
+    container_name: my-db
+    ports:
+      - ${POSTGRES_PORTS}
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
