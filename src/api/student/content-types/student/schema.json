@@ -4,7 +4,8 @@
   "info": {
     "singularName": "student",
     "pluralName": "students",
-    "displayName": "student"
+    "displayName": "student",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,12 +16,11 @@
       "type": "string",
       "required": true
     },
-    "mobile":{
-      "type": "number",
-      "required": true,
+    "mobile": {
+      "type": "string",
+      "required": false,
       "minLength": 10,
       "maxLength": 10
-
     }
   }
 }
